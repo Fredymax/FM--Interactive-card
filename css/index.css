@@ -1,0 +1,282 @@
+@import "./general.css";
+
+body {
+  background: no-repeat top/ 100% url(../images/bg-main-mobile.png);
+  font-size: 15px;
+  inline-size: 100%;
+  block-size: 100vh;
+}
+
+.container {
+  inline-size: 100%;
+  block-size: auto;
+  max-inline-size: 1440px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card-presentation {
+  block-size: 260px;
+}
+
+.wrapper {
+  padding-inline: 15px;
+  padding-block-start: 30px;
+}
+
+.card {
+  display: flex;
+  inline-size: 100%;
+  position: relative;
+  color: var(--white);
+}
+
+.card img {
+  inline-size: 100%;
+}
+
+.card-back {
+  justify-content: flex-end;
+}
+
+.card-back .card-information {
+  text-align: end;
+}
+
+.card-front {
+  justify-content: flex-start;
+  transform: translateY(-45%);
+}
+
+.card-cvc {
+  position: absolute;
+  top: calc(50% - 0.9em);
+  right: 10%;
+  font-size: 0.7em;
+}
+
+.card-information {
+  --card-width: 84%;
+  inline-size: var(--card-width);
+}
+
+.circle {
+  inline-size: 100%;
+  block-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.circle-little {
+  inline-size: 30px;
+  block-size: 30px;
+  border-radius: 100%;
+  background-color: var(--white);
+}
+
+.circle-small {
+  background: unset;
+  inline-size: 15px;
+  block-size: 15px;
+  border-radius: 100%;
+  border: 1px solid var(--white);
+}
+
+.flexbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  inline-size: var(--card-width);
+  block-size: 100%;
+  padding: 15px;
+}
+
+.card-number {
+  display: block;
+  font-size: 1.485em;
+  text-align: center;
+  margin-block-end: 10px;
+}
+
+.card-data-user {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-name,
+.card-date-expired {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 20px;
+}
+
+.form-group label {
+  text-transform: uppercase;
+  color: var(--very-dark-violet);
+  font-size: 0.9em;
+  font-weight: 600;
+  inline-size: 100%;
+  display: inline-block;
+  margin-block-end: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 82%);
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  inline-size: 100%;
+}
+.form-group input::placeholder {
+  color: hsl(0, 0%, 82%);
+  transition: opacity 0.5s ease;
+}
+
+.form-group input:focus::placeholder {
+  opacity: 0;
+}
+
+.form-row {
+  inline-size: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.form-row > :nth-child(1),
+.form-row > :nth-child(2) {
+  inline-size: 20%;
+  text-align: center;
+}
+.form-row > :nth-child(3) {
+  flex: 1;
+}
+.button {
+  inline-size: 100%;
+  padding-block: 15px;
+  font-family: inherit;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: var(--very-dark-violet);
+  cursor: pointer;
+  color: var(--white);
+  transition: all ease-out 0.3s;
+}
+
+.button:hover {
+  background-color: hsl(278deg 70% 21%);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background: hsl(278deg 28% 33%);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-block: 40px;
+}
+
+.message-paragraph {
+  text-align: center;
+  color: var(--dark-grayish-violet);
+}
+
+.text-error {
+  color: var(--error);
+  font-size: .8em;
+  padding-block-start: 3px;
+  font-weight: 600;
+  padding-inline-start: .2em;
+}
+
+.message h2 {
+  font-weight: 100;
+  color: var(--very-dark-violet);
+  padding-block: 10px;
+}
+
+.d-none {
+  display: none;
+}
+
+.form-error {
+  border-color: var(--error) !important;
+}
+
+.form-good {
+  border-color: var(--very-dark-violet) !important;
+}
+
+
+
+@media (min-width: 768px) {
+  body {
+    background: no-repeat left bottom/ 40% 100vh url(../images/bg-main-desktop.png);
+    display: grid;
+    place-content: center;
+  }
+
+  .container {
+    inline-size: 100%;
+    max-inline-size: 900px;
+    block-size: 40vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-presentation,
+  .form {
+    inline-size: 40vw;
+  }
+
+  .card-presentation {
+    display: flex;
+    flex-direction: column-reverse;
+    block-size: 100%;
+    gap: 2vh;
+  }
+
+  .card-front {
+    transform: translateY(0);
+  }
+
+  .card-information {
+    --card-width: 80%;
+  }
+
+  .form {
+    padding-inline-start: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+[data-display="hidden"] {
+  display: none;
+}
+
+[data-display="show"] {
+  display: flex;
+}
