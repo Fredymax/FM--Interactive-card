@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.ico" />
+    <title>Dev FreeMax | Interactive card details form</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="card-presentation">
+          <div class="card card-back">
+            <figure class="card-information">
+              <img src="./images/bg-card-back.png" alt="Card back" />
+              <div class="card-cvc">
+                <span data-cvc>000</span>
+              </div>
+            </figure>
+          </div>
+          <div class="card card-front">
+            <figure class="card-information">
+              <img src="./images/bg-card-front.png" alt="Card front" />
+              <div class="flexbox">
+                <div class="circle">
+                  <div class="circle-little"></div>
+                  <div class="circle-small"></div>
+                </div>
+                <div>
+                  <span class="card-number" data-card-number>0000 0000 0000 0000</span>
+                  <div class="card-data-user">
+                    <span class="card-name" data-card-holder-name> - </span>
+                    <span class="card-date-expired">
+                      <span data-date-exp-mm>00</span>/<span data-date-exp-yy>00</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+        <form action="javascript:;" class="form" autocomplete="off">
+          <div id="inputs" data-display="show" class="inputs">
+            <div class="form-group">
+              <label for="card-holder-name">Cardholder Name</label>
+              <input type="text" id="card-holder-name" onkeyup="handleKeyUp(event)" placeholder="e.g. Jane Appleseed" />
+            </div>
+            <div class="form-group">
+              <label for="card-number">Card Number</label>
+              <input type="text" id="card-number" onkeyup="handleKeyUp(event)" placeholder="e.g. 1234 5678 9123 0000" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date-exp-mm">Exp. Date</label>
+                <input type="text" id="date-exp-mm" onkeyup="handleKeyUp(event)" class="text-center" placeholder="MM" />
+              </div>
+              <div class="form-group">
+                <label for="date-exp-yy">(MM/YY)</label>
+                <input type="text" id="date-exp-yy" onkeyup="handleKeyUp(event)" class="text-center" placeholder="YY" />
+              </div>
+              <div class="form-group">
+                <label for="cvc">CVC</label>
+                <input type="text" id="cvc" onkeyup="handleKeyUp(event)" placeholder="e.g. 123" />
+              </div>
+            </div>
+          </div>
+          <div id="form-submitted" class="message" data-display="hidden">
+            <figure>
+              <img src="./images/icon-complete.svg" alt="Check" width="55" height="55" />
+            </figure>
+            <h2>THANK YOU!</h2>
+            <div class="message-paragraph">We've added your card details</div>
+          </div>
+          <button type="button" id="button" class="button">Confirm</button>
+        </form>
+      </div>
+    </div>
+    <script src="./libs/regex-expression.js"></script>
+    <script src="./libs/validate.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
