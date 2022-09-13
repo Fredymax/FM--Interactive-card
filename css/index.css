@@ -120,6 +120,10 @@ body {
   flex-direction: column;
 }
 
+.form {
+  margin-block-start: 1em;
+}
+
 .form-group {
   inline-size: 100%;
   display: flex;
@@ -204,10 +208,10 @@ body {
 
 .text-error {
   color: var(--error);
-  font-size: .8em;
+  font-size: 0.8em;
   padding-block-start: 3px;
   font-weight: 600;
-  padding-inline-start: .2em;
+  padding-inline-start: 0.2em;
 }
 
 .message h2 {
@@ -227,8 +231,6 @@ body {
 .form-good {
   border-color: var(--very-dark-violet) !important;
 }
-
-
 
 @media (min-width: 768px) {
   body {
